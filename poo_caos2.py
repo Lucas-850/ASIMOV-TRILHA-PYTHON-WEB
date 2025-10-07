@@ -4,18 +4,22 @@ import random
 
 class Academia():
     def __init__(self):
-        #1 vai definir os halteres em números pares de 10 a 36
-        #2 criar uma estrutura para abrigar os halteres
-        #3 crie uma função para reiniciar o dia da academia ( organizando os halteres )
+        self.halteres = [i for i in range(10,36,2)]
+        self.porta_halteres = {}
+        self.resetar_academia()
 
-        pass
 
-    #crie a função para reiniciar o dia 
+    def resetar_academia(self):
+        self.porta_halteres = {i : i for i in self.halteres}
     
-    #crie uma função que retorne todos os halteres disponíveis, que podem ser pegos
+    #função que retorne todos os halteres disponíveis, que podem ser pegos
+    def halteres_disponiveis(self):
+        return [i for i in self.porta_halteres.values()]
 
-    #crie uma funlão de pegar os halteres 
+    #função de pegar os halter e zerar a keyword do halter, retornando o peso pego
+    def pegar_halter(self,peso):
+        halteres_position = list(self.porta_halteres.values()).index(10)
+        self.porta_halteres[10] = 0
+    #função para devolver o halter 
 
-    #crie uma função para devolver o halter 
-
-
+    #função para mostrar o a porcentagem de halteres fora do lugar
